@@ -19,11 +19,16 @@ class PlayListViewController: UIViewController {
     @IBOutlet weak var imvCover: UIImageView!
     @IBOutlet weak var tblTrack: UITableView!
     
+    @IBOutlet weak var vMiniPlayer: UIView!
+    @IBOutlet weak var lbTrackTitle: UILabel!
+    
+    let playerController = AVPlayerViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-       setupUI()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +39,10 @@ class PlayListViewController: UIViewController {
     func setupUI(){
         tblTrack.delegate = self
         tblTrack.dataSource = self
-        tblTrack.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tblTrack.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         tblTrack.estimatedRowHeight = 46
         tblTrack.rowHeight = UITableView.automaticDimension
-       
+        
         tblTrack.register(UINib.init(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tblTrack.backgroundColor = UIColor.white
         tblTrack.tableHeaderView = UIView()
@@ -48,6 +53,20 @@ class PlayListViewController: UIViewController {
         lbAuthor.text = viewModel.author
         lbBookTitle.text = viewModel.name
         
+        setupPlayer()
+        
+    }
+    
+    func setupPlayer(){
+        
+        playerController.showsPlaybackControls = true
+        self.addChild(playerController)
+        let screenSize = UIScreen.main.bounds.size
+        let videoFrame = CGRect(x: 12, y: 40, width: screenSize.width - 24, height: 48)
+        playerController.view.frame = videoFrame
+        self.vMiniPlayer.addSubview(playerController.view)
+        
+        self.view.sendSubviewToBack(vMiniPlayer)
     }
     
     
@@ -70,30 +89,36 @@ class PlayListViewController: UIViewController {
         }
     }
     
-    func playWithBackground(_ link: String){
+    func playWithBackground(_ link: String, title: String = ""){
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             player = AVPlayer(url: URL(string: link)!)
             
             //This is for a player screen, if you don't want to show a player screen you comment this part
             
-            let controller = AVPlayerViewController()
-            controller.player = player
-            controller.showsPlaybackControls = true
-            self.present(controller, animated: true) {[weak self] in
-                DispatchQueue.main.async {
-                    self?.player?.play()
-                }
-            }
-//            self.addChild(controller)
-//            let screenSize = UIScreen.main.bounds.size
-//            let videoFrame = CGRect(x: 0, y: 130, width: screenSize.width, height: 60)
-//            controller.view.frame = videoFrame
-//            self.view.addSubview(controller.view)
-//            // till here
-//
-//            player?.play()
+            playerController.player = player
+            
+            
+            //            self.present(controller, animated: true) {[weak self] in
+            //                DispatchQueue.main.async {
+            //                    self?.player?.play()
+            //                }
+            //            }
+            
+            player?.play()
         } catch {
+        }
+        
+        lbTrackTitle.text = title
+        self.view.bringSubviewToFront(vMiniPlayer)
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func pressCloseMiniPlayer(_ sender: Any) {
+        if let player = player {
+            player.pause()
+            self.view.sendSubviewToBack(vMiniPlayer)
         }
     }
 }
@@ -112,7 +137,8 @@ extension PlayListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.list[indexPath.row]
-        playWithAVPlayerViewController(data.link)
-//        playWithBackground(data.link)
+        // playWithAVPlayerViewController(data.link)
+        playWithBackground(data.link, title: data.title)
     }
+    
 }
