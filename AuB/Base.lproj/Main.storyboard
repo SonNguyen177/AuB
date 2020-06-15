@@ -134,7 +134,7 @@
         <!--Play List View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="PlayListViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playBook" id="8rJ-Kc-sve" customClass="PlayListViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,21 +229,36 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Explorer Table View Controller-->
         <scene sceneID="NUP-i2-jjz">
             <objects>
-                <viewController id="e55-qC-SlF" sceneMemberID="viewController">
+                <viewController id="e55-qC-SlF" customClass="BookExplorerTableViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d0p-z6-ffc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I6c-nh-wEy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I6c-nh-wEy" firstAttribute="top" secondItem="Ehf-s0-hsI" secondAttribute="top" id="5bb-Uj-6jH"/>
+                            <constraint firstItem="Ehf-s0-hsI" firstAttribute="bottom" secondItem="I6c-nh-wEy" secondAttribute="bottom" id="DCI-kE-Pl0"/>
+                            <constraint firstItem="Ehf-s0-hsI" firstAttribute="trailing" secondItem="I6c-nh-wEy" secondAttribute="trailing" id="Dqw-wZ-pgE"/>
+                            <constraint firstItem="I6c-nh-wEy" firstAttribute="leading" secondItem="Ehf-s0-hsI" secondAttribute="leading" id="Oou-Nr-0Yz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ehf-s0-hsI"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Rld-DE-8tf"/>
+                    <connections>
+                        <outlet property="tableView" destination="I6c-nh-wEy" id="NXF-Y1-21V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWl-z6-HXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="1039"/>
+            <point key="canvasLocation" x="363.768115942029" y="1038.6160714285713"/>
         </scene>
         <!--Root Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -255,9 +270,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="e55-qC-SlF" kind="relationship" relationship="viewControllers" id="hOo-AM-Znv"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="e55-qC-SlF" kind="relationship" relationship="viewControllers" id="hOo-AM-Znv"/>
                         <segue destination="tss-fe-5lg" kind="relationship" relationship="viewControllers" id="I1e-gQ-nso"/>
                     </connections>
                 </tabBarController>

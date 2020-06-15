@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 
 class PlayListViewController: UIViewController {
+    var book : BookSummaryModel!
     let viewModel = PlayListVM()
     
     var player : AVPlayer?
@@ -26,6 +27,10 @@ class PlayListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if book == nil {
+            book = DataGenerator.defaultData()[0]
+        }
+        viewModel.bookModel = book
         
         // Do any additional setup after loading the view.
         setupUI()
@@ -50,8 +55,11 @@ class PlayListViewController: UIViewController {
         tblTrack.separatorStyle = .singleLine
         tblTrack.allowsSelection = true
         
-        lbAuthor.text = viewModel.author
-        lbBookTitle.text = viewModel.name
+        lbAuthor.text = viewModel.bookModel.author
+        lbBookTitle.text = viewModel.bookModel.name
+        if !viewModel.bookModel.thumbnail.isEmpty {
+            imvCover.image = UIImage(named: viewModel.bookModel.thumbnail)
+        }
         
         setupPlayer()
         
@@ -125,18 +133,18 @@ class PlayListViewController: UIViewController {
 
 extension PlayListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.list.count
+        return viewModel.bookModel.tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TrackTableViewCell
-        cell.bind(viewModel.list[indexPath.row])
+        cell.bind(viewModel.bookModel.tracks[indexPath.row])
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = viewModel.list[indexPath.row]
+        let data = viewModel.bookModel.tracks[indexPath.row]
         // playWithAVPlayerViewController(data.link)
         playWithBackground(data.link, title: data.title)
     }

@@ -14,6 +14,10 @@
 		C518BB0A2486A922003B00B7 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BB082486A922003B00B7 /* TrackTableViewCell.swift */; };
 		C518BB0B2486A922003B00B7 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C518BB092486A922003B00B7 /* TrackTableViewCell.xib */; };
 		C518BB0E2486AE6C003B00B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C518BB0D2486AE6C003B00B7 /* AudioToolbox.framework */; };
+		C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */; };
+		C5A020E72497C79B0090F7C0 /* BookCoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */; };
+		C5A020E82497C79B0090F7C0 /* BookCoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A020E62497C79B0090F7C0 /* BookCoverTableViewCell.xib */; };
+		C5A020EA2497CDA60090F7C0 /* BookExplorerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E92497CDA50090F7C0 /* BookExplorerViewModel.swift */; };
 		C5B6510324741746004B285F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6510224741746004B285F /* AppDelegate.swift */; };
 		C5B6510524741746004B285F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6510424741746004B285F /* SceneDelegate.swift */; };
 		C5B6510724741746004B285F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6510624741746004B285F /* FirstViewController.swift */; };
@@ -22,6 +26,7 @@
 		C5B6510E2474174D004B285F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6510D2474174D004B285F /* Assets.xcassets */; };
 		C5B651112474174D004B285F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6510F2474174D004B285F /* LaunchScreen.storyboard */; };
 		C5B6511A24741F8C004B285F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B6511924741F8C004B285F /* AVFoundation.framework */; };
+		C5B892852497C00100623407 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B892842497C00100623407 /* DataGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,10 @@
 		C518BB092486A922003B00B7 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 		C518BB0C2486AE6C003B00B7 /* AuB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AuB.entitlements; sourceTree = "<group>"; };
 		C518BB0D2486AE6C003B00B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookExplorerTableViewController.swift; sourceTree = "<group>"; };
+		C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverTableViewCell.swift; sourceTree = "<group>"; };
+		C5A020E62497C79B0090F7C0 /* BookCoverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCoverTableViewCell.xib; sourceTree = "<group>"; };
+		C5A020E92497CDA50090F7C0 /* BookExplorerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookExplorerViewModel.swift; sourceTree = "<group>"; };
 		C5B650FF24741746004B285F /* AuB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6510224741746004B285F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B6510424741746004B285F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 		C5B651102474174D004B285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5B651122474174D004B285F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5B6511924741F8C004B285F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C5B892842497C00100623407 /* DataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				C518BB012486A36D003B00B7 /* TrackModel.swift */,
+				C5B892842497C00100623407 /* DataGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -70,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C518BB042486A3FB003B00B7 /* PlayListVM.swift */,
+				C5A020E92497CDA50090F7C0 /* BookExplorerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -80,6 +92,7 @@
 				C5B6510624741746004B285F /* FirstViewController.swift */,
 				C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */,
 				C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */,
+				C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +102,8 @@
 			children = (
 				C518BB082486A922003B00B7 /* TrackTableViewCell.swift */,
 				C518BB092486A922003B00B7 /* TrackTableViewCell.xib */,
+				C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */,
+				C5A020E62497C79B0090F7C0 /* BookCoverTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -196,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A020E82497C79B0090F7C0 /* BookCoverTableViewCell.xib in Resources */,
 				C5B651112474174D004B285F /* LaunchScreen.storyboard in Resources */,
 				C5B6510E2474174D004B285F /* Assets.xcassets in Resources */,
 				C5B6510C24741746004B285F /* Main.storyboard in Resources */,
@@ -214,11 +230,15 @@
 				C518BAFD24869C6F003B00B7 /* PlayListViewController.swift in Sources */,
 				C5B6510924741746004B285F /* SecondViewController.swift in Sources */,
 				C518BB022486A36D003B00B7 /* TrackModel.swift in Sources */,
+				C5A020E72497C79B0090F7C0 /* BookCoverTableViewCell.swift in Sources */,
+				C5A020EA2497CDA60090F7C0 /* BookExplorerViewModel.swift in Sources */,
 				C518BB0A2486A922003B00B7 /* TrackTableViewCell.swift in Sources */,
 				C518BAFF24869FB8003B00B7 /* UIRootTabViewController.swift in Sources */,
 				C5B6510724741746004B285F /* FirstViewController.swift in Sources */,
 				C5B6510324741746004B285F /* AppDelegate.swift in Sources */,
 				C5B6510524741746004B285F /* SceneDelegate.swift in Sources */,
+				C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */,
+				C5B892852497C00100623407 /* DataGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
