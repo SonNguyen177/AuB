@@ -28,17 +28,21 @@ class BookSummaryModel {
     required init() {
         
     }
-    
+    var no = ""
     var name = ""
     var author = ""
     var chapters = ""
     var thumbnail = ""
     var shortDesc = ""
     
+    //
+    var isFavorite = false
+    
     var tracks : [TrackModel] = []
     
-    convenience init(name: String, author: String, chapters: String, thumbnail: String = "", shortDesc : String = "") {
+    convenience init(_ no: Int64, name: String, author: String, chapters: String, thumbnail: String = "", shortDesc : String = "") {
         self.init()
+        self.no = "\(no)"
         self.name = name
         self.author = author
         self.chapters = chapters

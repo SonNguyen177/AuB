@@ -10,25 +10,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="209" id="KGk-i7-Jjw" customClass="BookCoverTableViewCell" customModule="AuB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="478" height="232"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="BookFavoriteTableViewCell" customModule="AuB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="444" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="478" height="232"/>
+                <rect key="frame" x="0.0" y="0.0" width="444" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEv-O0-H8h">
-                        <rect key="frame" x="8" y="4" width="462" height="224"/>
+                        <rect key="frame" x="8" y="4" width="428" height="103"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trai-hoa-vang" translatesAutoresizingMaskIntoConstraints="NO" id="grJ-fM-94g">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Gg9-gu-ZQm"/>
-                                    <constraint firstAttribute="height" constant="120" id="JaH-5S-ywV"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-wV-tMj">
-                                <rect key="frame" x="128" y="12" width="290" height="24"/>
+                                <rect key="frame" x="128" y="12" width="292" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -57,25 +56,6 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAE-zl-Xqj">
-                                <rect key="frame" x="12" y="120" width="442" height="96"/>
-                                <string key="text">First one allows you to secure all your entries in Keychain. So when there is no passcode on device nothing can be stored inside of Keychain. Even when user decides to remove passcode it will automatically delete all previously stored values. Sounds good, isn’t it? </string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXa-dv-Jp7">
-                                <rect key="frame" x="422" y="8" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="PK3-2Y-ZD1"/>
-                                    <constraint firstAttribute="width" constant="32" id="VJG-9t-WYH"/>
-                                </constraints>
-                                <color key="tintColor" red="0.86274509799999999" green="0.08235294118" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="ic-heart"/>
-                                <connections>
-                                    <action selector="pressFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Yfz-Xs-7tU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -83,20 +63,15 @@
                             <constraint firstItem="8j9-wV-tMj" firstAttribute="leading" secondItem="grJ-fM-94g" secondAttribute="trailing" constant="8" id="9dC-Gc-chO"/>
                             <constraint firstItem="JNE-Nh-STF" firstAttribute="leading" secondItem="4zw-1l-6eA" secondAttribute="trailing" constant="8" id="DFj-MK-0gn"/>
                             <constraint firstItem="8j9-wV-tMj" firstAttribute="top" secondItem="eEv-O0-H8h" secondAttribute="top" constant="12" id="DiT-mT-l93"/>
-                            <constraint firstItem="tAE-zl-Xqj" firstAttribute="top" secondItem="grJ-fM-94g" secondAttribute="bottom" id="EJ1-aw-irn"/>
-                            <constraint firstAttribute="bottom" secondItem="tAE-zl-Xqj" secondAttribute="bottom" constant="8" id="Ioc-EB-E3C"/>
                             <constraint firstItem="grJ-fM-94g" firstAttribute="top" secondItem="eEv-O0-H8h" secondAttribute="top" id="JaG-cm-n1u"/>
-                            <constraint firstAttribute="trailing" secondItem="tAE-zl-Xqj" secondAttribute="trailing" constant="8" id="PMA-Bt-VkP"/>
-                            <constraint firstAttribute="trailing" secondItem="CXa-dv-Jp7" secondAttribute="trailing" constant="8" id="QZV-bZ-ALn"/>
                             <constraint firstItem="4qj-Bm-L8I" firstAttribute="top" secondItem="8j9-wV-tMj" secondAttribute="bottom" constant="12" id="R1Z-n7-sFY"/>
                             <constraint firstItem="JNE-Nh-STF" firstAttribute="centerY" secondItem="4zw-1l-6eA" secondAttribute="centerY" id="VXB-GO-yxG"/>
+                            <constraint firstAttribute="bottom" secondItem="grJ-fM-94g" secondAttribute="bottom" id="eU1-ZY-2l3"/>
                             <constraint firstItem="4zw-1l-6eA" firstAttribute="leading" secondItem="4qj-Bm-L8I" secondAttribute="leading" id="iaJ-Iw-XuT"/>
                             <constraint firstItem="uuH-RL-4Qk" firstAttribute="centerY" secondItem="4qj-Bm-L8I" secondAttribute="centerY" id="nJ6-F0-frh"/>
                             <constraint firstItem="4qj-Bm-L8I" firstAttribute="leading" secondItem="grJ-fM-94g" secondAttribute="trailing" constant="8" id="paM-De-GHy"/>
-                            <constraint firstItem="CXa-dv-Jp7" firstAttribute="top" secondItem="eEv-O0-H8h" secondAttribute="top" constant="8" id="prq-aL-AZp"/>
-                            <constraint firstItem="tAE-zl-Xqj" firstAttribute="leading" secondItem="eEv-O0-H8h" secondAttribute="leading" constant="12" id="uSC-wb-G28"/>
+                            <constraint firstAttribute="trailing" secondItem="8j9-wV-tMj" secondAttribute="trailing" constant="8" id="qhs-6F-A1F"/>
                             <constraint firstItem="uuH-RL-4Qk" firstAttribute="leading" secondItem="JNE-Nh-STF" secondAttribute="leading" id="wZN-0Q-QuG"/>
-                            <constraint firstItem="CXa-dv-Jp7" firstAttribute="leading" secondItem="8j9-wV-tMj" secondAttribute="trailing" constant="4" id="xK1-Bg-kO7"/>
                             <constraint firstAttribute="leading" secondItem="grJ-fM-94g" secondAttribute="leading" id="xXe-Yo-IPW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -108,7 +83,7 @@
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="eEv-O0-H8h" secondAttribute="bottom" constant="4" id="FzE-Jf-fmq"/>
+                    <constraint firstAttribute="bottom" secondItem="eEv-O0-H8h" secondAttribute="bottom" constant="4" id="Xj1-UZ-H6s"/>
                     <constraint firstItem="eEv-O0-H8h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="bv2-4x-UJn"/>
                     <constraint firstAttribute="trailing" secondItem="eEv-O0-H8h" secondAttribute="trailing" constant="8" id="vhL-IF-VTx"/>
                     <constraint firstItem="eEv-O0-H8h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="wjS-bs-BW0"/>
@@ -116,18 +91,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnFavourite" destination="CXa-dv-Jp7" id="pMN-sV-xnN"/>
                 <outlet property="imvCover" destination="grJ-fM-94g" id="Cci-yb-Bb5"/>
-                <outlet property="lbShortDesc" destination="tAE-zl-Xqj" id="573-xg-HWa"/>
                 <outlet property="lblAuthor" destination="uuH-RL-4Qk" id="fhI-Y9-uyF"/>
                 <outlet property="lblChapter" destination="JNE-Nh-STF" id="yGL-Zj-Bwg"/>
                 <outlet property="lblTitle" destination="8j9-wV-tMj" id="hfr-QF-4bg"/>
             </connections>
-            <point key="canvasLocation" x="252.17391304347828" y="199.55357142857142"/>
+            <point key="canvasLocation" x="227.536231884058" y="156.36160714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic-heart" width="100" height="100"/>
         <image name="trai-hoa-vang" width="1280" height="770"/>
     </resources>
 </document>

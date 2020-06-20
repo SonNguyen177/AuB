@@ -105,7 +105,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tvLink" destination="e7d-5B-FQB" id="xHd-hF-Zqu"/>
                         <outlet property="vPlaying" destination="1D4-gn-U50" id="8JQ-j4-Pue"/>
@@ -115,17 +115,32 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--View Controller-->
+        <!--Favourite View Controller-->
         <scene sceneID="y2t-bI-sDD">
             <objects>
-                <viewController id="tss-fe-5lg" sceneMemberID="viewController">
+                <viewController id="tss-fe-5lg" customClass="FavouriteViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uI3-Xe-6OM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qpt-qj-gbq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="laK-F4-CLj" firstAttribute="trailing" secondItem="Qpt-qj-gbq" secondAttribute="trailing" id="0GX-8u-3LZ"/>
+                            <constraint firstItem="Qpt-qj-gbq" firstAttribute="top" secondItem="laK-F4-CLj" secondAttribute="top" id="IDs-Jk-eOe"/>
+                            <constraint firstItem="laK-F4-CLj" firstAttribute="bottom" secondItem="Qpt-qj-gbq" secondAttribute="bottom" id="Rwn-F2-tf7"/>
+                            <constraint firstItem="Qpt-qj-gbq" firstAttribute="leading" secondItem="laK-F4-CLj" secondAttribute="leading" id="XeR-5l-SFa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="laK-F4-CLj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Jfg-7p-vp5"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Jfg-7p-vp5"/>
+                    <connections>
+                        <outlet property="tableView" destination="Qpt-qj-gbq" id="1qd-Zf-IBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QV-Jh-x0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +267,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ehf-s0-hsI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Rld-DE-8tf"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Rld-DE-8tf"/>
                     <connections>
                         <outlet property="tableView" destination="I6c-nh-wEy" id="NXF-Y1-21V"/>
                     </connections>
@@ -273,8 +288,8 @@
                     <connections>
                         <segue destination="e55-qC-SlF" kind="relationship" relationship="viewControllers" id="hOo-AM-Znv"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="tss-fe-5lg" kind="relationship" relationship="viewControllers" id="I1e-gQ-nso"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

@@ -13,34 +13,34 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TrackTableViewCell" customModule="AuB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l23-Ah-kEZ">
-                        <rect key="frame" x="2" y="2" width="316" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-c7-pxX">
-                                <rect key="frame" x="8" y="10" width="300" height="20"/>
+                                <rect key="frame" x="8" y="11.5" width="304" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.2274509804" green="0.73725490199999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="p3s-c7-pxX" firstAttribute="leading" secondItem="l23-Ah-kEZ" secondAttribute="leading" constant="8" id="7PH-YX-hSR"/>
-                            <constraint firstAttribute="height" constant="40" id="8hL-gU-KmJ"/>
+                            <constraint firstAttribute="height" constant="43" id="8hL-gU-KmJ"/>
                             <constraint firstItem="p3s-c7-pxX" firstAttribute="centerY" secondItem="l23-Ah-kEZ" secondAttribute="centerY" id="JZm-5f-OOt"/>
                             <constraint firstAttribute="trailing" secondItem="p3s-c7-pxX" secondAttribute="trailing" constant="8" id="bKN-yB-Oqm"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="l23-Ah-kEZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="8VB-UA-Du2"/>
-                    <constraint firstAttribute="trailing" secondItem="l23-Ah-kEZ" secondAttribute="trailing" constant="2" id="agt-YF-sfJ"/>
+                    <constraint firstItem="l23-Ah-kEZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8VB-UA-Du2"/>
+                    <constraint firstAttribute="trailing" secondItem="l23-Ah-kEZ" secondAttribute="trailing" id="agt-YF-sfJ"/>
                     <constraint firstAttribute="bottom" secondItem="l23-Ah-kEZ" secondAttribute="bottom" constant="2" id="hfO-fO-DQe"/>
-                    <constraint firstItem="l23-Ah-kEZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="qbX-px-OLL"/>
+                    <constraint firstItem="l23-Ah-kEZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qbX-px-OLL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

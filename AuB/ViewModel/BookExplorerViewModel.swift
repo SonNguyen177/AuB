@@ -12,5 +12,14 @@ class BookExplorerViewModel {
     
     init() {
         list = DataGenerator.defaultData()
+        // check is Favourite
+        let favList = StorageUtils.shared.loadFavorite()
+        if favList.count > 0{
+            for itemNo in favList {
+                if let existed = list.first(where: {$0.no == itemNo}) {
+                    existed.isFavorite = true
+                }
+            }
+        }
     }
 }

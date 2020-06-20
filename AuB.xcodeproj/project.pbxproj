@@ -14,6 +14,12 @@
 		C518BB0A2486A922003B00B7 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BB082486A922003B00B7 /* TrackTableViewCell.swift */; };
 		C518BB0B2486A922003B00B7 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C518BB092486A922003B00B7 /* TrackTableViewCell.xib */; };
 		C518BB0E2486AE6C003B00B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C518BB0D2486AE6C003B00B7 /* AudioToolbox.framework */; };
+		C523FE23249E5CD00044FF2C /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE22249E5CD00044FF2C /* FavouriteViewController.swift */; };
+		C523FE25249E5FD50044FF2C /* FavouriteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE24249E5FD50044FF2C /* FavouriteVM.swift */; };
+		C523FE27249E60F20044FF2C /* StorageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE26249E60F20044FF2C /* StorageUtils.swift */; };
+		C523FE2A249E637A0044FF2C /* Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE29249E637A0044FF2C /* Noti.swift */; };
+		C523FE2D249E6BB40044FF2C /* BookFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C523FE2B249E6BB40044FF2C /* BookFavoriteTableViewCell.xib */; };
+		C523FE2E249E6BB40044FF2C /* BookFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE2C249E6BB40044FF2C /* BookFavoriteTableViewCell.swift */; };
 		C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */; };
 		C5A020E72497C79B0090F7C0 /* BookCoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */; };
 		C5A020E82497C79B0090F7C0 /* BookCoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A020E62497C79B0090F7C0 /* BookCoverTableViewCell.xib */; };
@@ -38,6 +44,12 @@
 		C518BB092486A922003B00B7 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 		C518BB0C2486AE6C003B00B7 /* AuB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AuB.entitlements; sourceTree = "<group>"; };
 		C518BB0D2486AE6C003B00B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C523FE22249E5CD00044FF2C /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		C523FE24249E5FD50044FF2C /* FavouriteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVM.swift; sourceTree = "<group>"; };
+		C523FE26249E60F20044FF2C /* StorageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtils.swift; sourceTree = "<group>"; };
+		C523FE29249E637A0044FF2C /* Noti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noti.swift; sourceTree = "<group>"; };
+		C523FE2B249E6BB40044FF2C /* BookFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookFavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		C523FE2C249E6BB40044FF2C /* BookFavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookExplorerTableViewController.swift; sourceTree = "<group>"; };
 		C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverTableViewCell.swift; sourceTree = "<group>"; };
 		C5A020E62497C79B0090F7C0 /* BookCoverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCoverTableViewCell.xib; sourceTree = "<group>"; };
@@ -73,6 +85,8 @@
 			children = (
 				C518BB012486A36D003B00B7 /* TrackModel.swift */,
 				C5B892842497C00100623407 /* DataGenerator.swift */,
+				C523FE26249E60F20044FF2C /* StorageUtils.swift */,
+				C523FE29249E637A0044FF2C /* Noti.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +96,7 @@
 			children = (
 				C518BB042486A3FB003B00B7 /* PlayListVM.swift */,
 				C5A020E92497CDA50090F7C0 /* BookExplorerViewModel.swift */,
+				C523FE24249E5FD50044FF2C /* FavouriteVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -89,10 +104,12 @@
 		C518BB062486A580003B00B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5B6510624741746004B285F /* FirstViewController.swift */,
-				C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */,
 				C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */,
+				C5B6510624741746004B285F /* FirstViewController.swift */,
+				C5B6510824741746004B285F /* SecondViewController.swift */,
+				C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */,
 				C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */,
+				C523FE22249E5CD00044FF2C /* FavouriteViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +117,8 @@
 		C518BB072486A901003B00B7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C523FE2C249E6BB40044FF2C /* BookFavoriteTableViewCell.swift */,
+				C523FE2B249E6BB40044FF2C /* BookFavoriteTableViewCell.xib */,
 				C518BB082486A922003B00B7 /* TrackTableViewCell.swift */,
 				C518BB092486A922003B00B7 /* TrackTableViewCell.xib */,
 				C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */,
@@ -135,7 +154,6 @@
 				C518BB002486A256003B00B7 /* Model */,
 				C5B6510224741746004B285F /* AppDelegate.swift */,
 				C5B6510424741746004B285F /* SceneDelegate.swift */,
-				C5B6510824741746004B285F /* SecondViewController.swift */,
 				C5B6510A24741746004B285F /* Main.storyboard */,
 				C5B6510D2474174D004B285F /* Assets.xcassets */,
 				C5B6510F2474174D004B285F /* LaunchScreen.storyboard */,
@@ -213,6 +231,7 @@
 			files = (
 				C5A020E82497C79B0090F7C0 /* BookCoverTableViewCell.xib in Resources */,
 				C5B651112474174D004B285F /* LaunchScreen.storyboard in Resources */,
+				C523FE2D249E6BB40044FF2C /* BookFavoriteTableViewCell.xib in Resources */,
 				C5B6510E2474174D004B285F /* Assets.xcassets in Resources */,
 				C5B6510C24741746004B285F /* Main.storyboard in Resources */,
 				C518BB0B2486A922003B00B7 /* TrackTableViewCell.xib in Resources */,
@@ -228,15 +247,20 @@
 			files = (
 				C518BB052486A3FB003B00B7 /* PlayListVM.swift in Sources */,
 				C518BAFD24869C6F003B00B7 /* PlayListViewController.swift in Sources */,
+				C523FE2E249E6BB40044FF2C /* BookFavoriteTableViewCell.swift in Sources */,
 				C5B6510924741746004B285F /* SecondViewController.swift in Sources */,
+				C523FE27249E60F20044FF2C /* StorageUtils.swift in Sources */,
 				C518BB022486A36D003B00B7 /* TrackModel.swift in Sources */,
+				C523FE23249E5CD00044FF2C /* FavouriteViewController.swift in Sources */,
 				C5A020E72497C79B0090F7C0 /* BookCoverTableViewCell.swift in Sources */,
 				C5A020EA2497CDA60090F7C0 /* BookExplorerViewModel.swift in Sources */,
 				C518BB0A2486A922003B00B7 /* TrackTableViewCell.swift in Sources */,
 				C518BAFF24869FB8003B00B7 /* UIRootTabViewController.swift in Sources */,
 				C5B6510724741746004B285F /* FirstViewController.swift in Sources */,
 				C5B6510324741746004B285F /* AppDelegate.swift in Sources */,
+				C523FE25249E5FD50044FF2C /* FavouriteVM.swift in Sources */,
 				C5B6510524741746004B285F /* SceneDelegate.swift in Sources */,
+				C523FE2A249E637A0044FF2C /* Noti.swift in Sources */,
 				C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */,
 				C5B892852497C00100623407 /* DataGenerator.swift in Sources */,
 			);
