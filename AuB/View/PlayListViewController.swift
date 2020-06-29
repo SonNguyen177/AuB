@@ -52,7 +52,7 @@ class PlayListViewController: UIViewController {
         tblTrack.backgroundColor = UIColor.white
         tblTrack.tableHeaderView = UIView()
         tblTrack.tableFooterView = UIView()
-        tblTrack.separatorStyle = .singleLine
+        tblTrack.separatorStyle = .none
         tblTrack.allowsSelection = true
         
         lbAuthor.text = viewModel.bookModel.author

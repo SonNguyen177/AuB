@@ -15,17 +15,35 @@ class DataGenerator {
         var stores = [BookSummaryModel]()
         
         stores.append(ConChutGiDeNho())
-        stores.append(NgoiKhocTrenCay())
+        stores.append(ChuBeRacRoi())
         stores.append(ChoToiXinMotVeDiTuoiTho())
+        stores.append(getToiThayHoaVagTrenCoXanh())
+        
+        stores.append(getCayChuoiNonDiGiayXanh())
+        stores.append(TraiHoaVang())
+        
+        stores.append(getDiQuaHoaCuc())
         stores.append(HaDo())
         stores.append(MatBiec())
-        stores.append(TraiHoaVang())
-        stores.append(ChuBeRacRoi())
-        stores.append(LaNamTrongLa())
+        stores.append(NgoiKhocTrenCay())
+        
         stores.append(HoaHongXuKhac())
+        stores.append(getNhungCoEmGai())
         stores.append(NgoiTruongMoiKhi())
+        stores.append(LaNamTrongLa())
         stores.append(NhungChangTraiXauTinh())
         
+        stores.append(getCoGaiDenTuHomQua())
+        stores.append(getCoHaiConMeoNgoiBenCuaSo())
+        stores.append(getNuSinh())
+        stores.append(getBoCauKhongDuaThu())
+        stores.append(getBuoiChieuWindows())
+        
+        stores.append(getPhongTroBaNguoi())
+        stores.append(getBanCoNamChoNgoi())
+        
+        stores.append(getKVHNhaAoThuat())
+       
         return stores
     }
     
@@ -102,7 +120,7 @@ class DataGenerator {
         bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ConChutGiDeNho/Sach-Noi-Audio-Book-Con-Chut-Gi-De-Nho-5-www.phatphapungdung.com.mp3"))
         
         return bk
-    
+        
     }
     
     //MARK: MatBiec
@@ -135,8 +153,8 @@ class DataGenerator {
     
     //MARK: NgoiKhocTrenCay
     private static func NgoiKhocTrenCay() -> BookSummaryModel {
-           let bk = BookSummaryModel(1007, name: "Ngồi Khóc Trên Cây", author: "Nguyễn Nhật Ánh", chapters: "11", thumbnail: "ngoi-khoc-tren-cay", shortDesc: "Mở đầu là kỳ nghỉ hè tại một ngôi làng thơ mộng ven sông với nhân vật là những đứa trẻ mới lớn có vô vàn trò chơi đơn sơ hấp dẫn ghi dấu mãi trong lòng.   Mối tình đầu trong veo của cô bé Rùa và chàng sinh viên quê học ở thành phố có giống tình đầu của bạn thời đi học? Và cái cách họ thương nhau giấu giếm, không dám làm nhau buồn, khát khao hạnh phúc đến nghẹt thở có phải là câu chuyện chính?")
-           bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Ngoi-Khoc-Tren-Cay-01-phatphapungdung.com.mp3"))
+        let bk = BookSummaryModel(1007, name: "Ngồi Khóc Trên Cây", author: "Nguyễn Nhật Ánh", chapters: "11", thumbnail: "ngoi-khoc-tren-cay", shortDesc: "Mở đầu là kỳ nghỉ hè tại một ngôi làng thơ mộng ven sông với nhân vật là những đứa trẻ mới lớn có vô vàn trò chơi đơn sơ hấp dẫn ghi dấu mãi trong lòng.   Mối tình đầu trong veo của cô bé Rùa và chàng sinh viên quê học ở thành phố có giống tình đầu của bạn thời đi học? Và cái cách họ thương nhau giấu giếm, không dám làm nhau buồn, khát khao hạnh phúc đến nghẹt thở có phải là câu chuyện chính?")
+        bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Ngoi-Khoc-Tren-Cay-01-phatphapungdung.com.mp3"))
         bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Ngoi-Khoc-Tren-Cay-02-phatphapungdung.com.mp3"))
         bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Ngoi-Khoc-Tren-Cay-03-phatphapungdung.com.mp3"))
         bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Ngoi-Khoc-Tren-Cay-04-phatphapungdung.com.mp3"))
@@ -195,4 +213,154 @@ class DataGenerator {
         
         return bk
     }
+}
+
+func getCoGaiDenTuHomQua() -> BookSummaryModel {
+    let bk = BookSummaryModel(20010, name: "Cô Gái Đến Từ Hôm Qua", author: "Nguyễn Nhật Ánh", chapters: "10", thumbnail: "co-gai-den-tu-hom-qua", shortDesc: "Với lối kết cấu hai phần song song, một bên là hiện tại, một bên là quá khứ, nhân vật “tôi” kể lại tình cảm với hai cô bạn ở hai quãng đời khác nhau. Tương tự như kết luận của nhà văn Đoàn Thạch Biền trong truyện ngắn Hồng Hà: con trai càng lớn càng ngu – nhân vật của Nguyễn Nhật Ánh cũng đầy “quyền lực” với con gái lúc còn… nhóc, và “mất giá” thê thảm khi ở tuổi trung học. Câu chuyện chỉ có vậy, nhưng ngòi bút của tác giả đã tạo nên những tình tiết vui nhộn, rất đặc trưng của từng lứa tuổi.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-01-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-02-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-03-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-04-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-05-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-06-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-07-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-08-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-09-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 10", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-10-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getCoHaiConMeoNgoiBenCuaSo() -> BookSummaryModel {
+    let bk = BookSummaryModel(20011, name: "Có Hai Con Mèo Ngồi Bên Cửa Sổ", author: "Nguyễn Nhật Ánh", chapters: "4", thumbnail: "co-hai-con-meo-ngoi-ben-cua-so", shortDesc: "CÓ HAI CON MÈO NGỒI BÊN CỬA SỔ là tác phẩm đầu tiên của nhà văn Nguyễn Nhật Ánh viết theo thể loại đồng thoại. Đặc biệt hơn nữa là viết về tình bạn của hai loài vốn là thù địch của nhau mèo và chuột. Đó là tình bạn giữa mèo Gấu và chuột Tí Hon.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/van-hoc-thieu-nhi-phat-phap-ung-dung/Co-2-Con-Meo-Ngoi-Ben-Cua-So-01-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/van-hoc-thieu-nhi-phat-phap-ung-dung/Co-2-Con-Meo-Ngoi-Ben-Cua-So-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/van-hoc-thieu-nhi-phat-phap-ung-dung/Co-2-Con-Meo-Ngoi-Ben-Cua-So-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/van-hoc-thieu-nhi-phat-phap-ung-dung/Co-2-Con-Meo-Ngoi-Ben-Cua-So-04-phatphapungdung.com.mp3"))
+    
+    
+    return bk
+}
+
+func getPhongTroBaNguoi() -> BookSummaryModel {
+    let bk = BookSummaryModel(20012, name: "Phòng Trọ Ba Người", author: "Nguyễn Nhật Ánh", chapters: "8", thumbnail: "phong-tro-ba-nguoi", shortDesc: "Phòng trọ ba người là nơi dành cho ba chàng sinh viên Chuyên, Nhiệm, và Mẫn trú ngụ, là nơi họ chia sẻ việc học hành, những trò nghịch ngợm và chia sẻ cả những buồn vui trong đời sống tình cảm. Mẫn, chàng trai nhút nhát vốn quan niệm tình yêu là thứ “ xa xỉ phẩm”, đến lúc phải dựng lên vở kịch tình yêu với sự trợ sức của Thu Thảo, cô học trò tinh nghịch của anh. Trò chơi tưởng chỉ để góp vào không khí sôi động của căn gác trọ ấy, không ngờ đã thực sự cuốn hút chàng trai chuyên “dị ứng với phụ nữ” ấy. Khi buộc lòng phải chấm dứt với trò chơi, cũng là lúc Mẫn cảm thấy buông khuâng như phải chia tay với tình cảm thực sự.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-6-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-7-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/PhongTroBaNguoi/Sach-Noi-Audio-Book-Phong-Tro-Ba-Nguoi-8-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getNuSinh() -> BookSummaryModel {
+    let bk = BookSummaryModel(20013, name: "Nữ Sinh", author: "Nguyễn Nhật Ánh", chapters: "3", thumbnail: "nu-sinh", shortDesc: "Một sự bất ngờ, Gia được cử về làm giáo viên chủ nhiệm lớp Xuyến, Thục, Cúc Hương. Ba cô hoảng hồn vì thời gian qua đã “hành hạ” Gia bằng đủ trò nghịch ngợm của mình. Hùng quăn không dám đến lớp vì đã có lần đón đường ném đá Gia gây thương tích. Không chịu nổi người dượng ghẻ. Hùng bỏ nhà ra đi. Với tấm lòng cao thượng. Gia đón Hùng về nhà ở chung với mình. Cuối cùng ba cô bạn cũng tìm ra chỗ ở của Gia. Họ sôi nổi bàn chuyện đi cắm trại và xem phim cho cả lớp.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NuSinh/Sach-Noi-Audio-Book-Nu-Sinh-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NuSinh/Sach-Noi-Audio-Book-Nu-Sinh-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NuSinh/Sach-Noi-Audio-Book-Nu-Sinh-3-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getBuoiChieuWindows() -> BookSummaryModel {
+    let bk = BookSummaryModel(20014, name: "Buổi Chiều Windows", author: "Nguyễn Nhật Ánh", chapters: "5", thumbnail: "buoi-chieu-windows", shortDesc: "Một buổi sáng mùa hè, trên đường Nguyễn Du có ba cô gái chạy trên hai chiếc xe, vừa đi vừa dòm dáo dác. Đường một chiều, nhưng không vì vậy mà người qua kẻ lại ít nhộn nhịp. Những chiếc xe phân khối lớn vừa phóng vun vút vừa bóp còi inh ỏi khiến ba cô nhăn mặt ép sát vô phía trong. Dĩ nhiên những ai đã đọc qua những truyện dài đại loại như “nữ sinh” hoặc “Bồ câu không đưa thư” đều biết ngay ba cô gái đó không ai khác ngoài bộ ba Xuyến, Thục và Cúc Hương…")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BuoiChieuWindows/Sach-Noi-Audio-Book-Buoi-Chieu-Windows-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BuoiChieuWindows/Sach-Noi-Audio-Book-Buoi-Chieu-Windows-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BuoiChieuWindows/Sach-Noi-Audio-Book-Buoi-Chieu-Windows-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BuoiChieuWindows/Sach-Noi-Audio-Book-Buoi-Chieu-Windows-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BuoiChieuWindows/Sach-Noi-Audio-Book-Buoi-Chieu-Windows-5-www.phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getBoCauKhongDuaThu() -> BookSummaryModel {
+    let bk = BookSummaryModel(20015, name: "Bồ Câu Không Đưa Thư", author: "Nguyễn Nhật Ánh", chapters: "7", thumbnail: "bo-cau-khong-dua-thu", shortDesc: "Câu chuyện bắt đầu từ lá thư làm quen để trong học bàn của Thục, trong bộ ba Xuyến, Thục, Cúc Hương. Lá thư chân tình đã thu hút sự tò mò của bộ ba, và họ bị cuốn hút vào trò chơi với người giấu mặt, dần hồi kéo theo Phán củi, anh chàng xấu xí vụng về của lớp làm quân sư và giúp xướng họa thơ. Cuộc truy tìm dẫn mọi người đến nhiều hiểu lầm tai hại và cả những bất ngờ thú vị. Và điều bất ngờ cuối cùng đã được phát hiện quá muộn. Vì sao? Xin để cho bạn đọc tự khám phá.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-6-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BoCauKhongDuaThu/Sach-Noi-Audio-Book-Bo-Cau-Khong-Dua-Thu-7-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getBanCoNamChoNgoi() -> BookSummaryModel {
+    let bk = BookSummaryModel(20016, name: "Bàn Có Năm Chỗ Ngồi", author: "Nguyễn Nhật Ánh", chapters: "6", thumbnail: "ban-co-nam-cho-ngoi", shortDesc: "Thế rồi, theo như thông lệ hàng năm, sau những tuần đầu dành cho việc ổn định lớp, nhà trường phát động phong trào xây dựng đôi bạn cùng tiến, mở đầu một quá trình thi đua thật sự. Mỗi năm, cứ đến dịp này, lớp tôi xôn xao cả lên. Về việc chọn bạn học chung bao giờ cũng gây ra lắm tranh cãi . Thường thì giáo viên chủ nhiệm chia số học sinh trong lớp ra làm bốn loại trên bảng: giỏi, khá, trung bình, yếu, căn cứ vào bản xếp loại cuối năm học trước.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/BanCoNamChoNgoi/Sach-Noi-Audio-Book-Ban-Co-Nam-Cho-Ngoi-6-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getToiThayHoaVagTrenCoXanh() -> BookSummaryModel {
+    let bk = BookSummaryModel(20017, name: "Tôi Thấy Hoa Vàng Trên Cỏ Xanh", author: "Nguyễn Nhật Ánh", chapters: "9", thumbnail: "toi-thay-hoa-vang-tren-co-xanh", shortDesc: "Cuốn sách viết về tuổi thơ nghèo khó ở một làng quê, bên cạnh đề tài tình yêu quen thuộc, lần đầu tiên Nguyễn Nhật Ánh đưa vào tác phẩm của mình những nhân vật phản diện và đặt ra vấn đề đạo đức như sự vô tâm, cái ác. 81 chương ngắn là 81 câu chuyện nhỏ của những đứa trẻ xảy ra ở một ngôi làng: chuyện về con cóc Cậu trời, chuyện ma, chuyện công chúa và hoàng tử, bên cạnh chuyện đói ăn, cháy nhà, lụt lội, “Tôi thấy hoa vàng trên cỏ xanh”hứa hẹn đem đến những điều thú vị với cả bạn đọc nhỏ tuổi và người lớn bằng giọng văn trong sáng, hồn nhiên, giản dị của trẻ con cùng nhiều tình tiết thú vị, bất ngờ và cảm động trong suốt hơn 300 trang sách. Cuốn sách, vì thế có sức ám ảnh, thu hút, hấp dẫn không thể bỏ qua.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-01-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-04-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-06-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-07-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-08-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Toi-Thay-Hoa-Vang-Tren-Co-Xanh-09-phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getKVHNhaAoThuat() -> BookSummaryModel {
+    let bk = BookSummaryModel(20018, name: "Kính Vạn Hoa: Nhà Ảo Thuật", author: "Nguyễn Nhật Ánh", chapters: "5", thumbnail: "kvh-nha-ao-thuat", shortDesc: "Tháng tư bao giờ cũng bắt đầu bằng những ngày oi bức khó chịu. Hằng năm, vào mùa này mọi cư dân trong thành phố thường trằn trọc khó ngủ. Dù nhà mở toang cửa sổ, suốt đêm cũng chỉ đón được dăm ba làn gió nhẹ thoảng qua và cứ đến gần sáng là mọi người thiếp đi trong giấc ngủ mê mệt. Quý ròm dĩ nhiên không thể là một ngoại lệ, nhất là tối hôm qua nó thức khuya lơ khuya lắc ráng đọc cho xong cuốn “Toán học ứng dụng trong đời sống” mà nó vừa mua được chiều hôm trước.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhaAoThuat/Sach-Noi-Audio-Book-Nha-Ao-Thuat-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhaAoThuat/Sach-Noi-Audio-Book-Nha-Ao-Thuat-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhaAoThuat/Sach-Noi-Audio-Book-Nha-Ao-Thuat-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhaAoThuat/Sach-Noi-Audio-Book-Nha-Ao-Thuat-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhaAoThuat/Sach-Noi-Audio-Book-Nha-Ao-Thuat-5-www.phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getDiQuaHoaCuc() -> BookSummaryModel {
+    let bk = BookSummaryModel(20019, name: "Đi Qua Hoa Cúc", author: "Nguyễn Nhật Ánh", chapters: "10", thumbnail: "di-qua-hoa-cuc", shortDesc: "Cuốn Đi Qua Hoa Cúc là tập truyện dài của Nguyễn Nhật Ánh, mở đầu câu truyện tác giả kể lại tuổi ấu thơ hồn nhiên của nhân vật trong truyện, kết hợp với tả cảnh ở miền quê, những ngôi nhà nằm dọc hai bên đường đá sỏi dọc theo hai bên hàng dâm bụt và cả cây sứ cây bàng tỏa bóng mát, tỏa hương thơm trước sân nhà. Một nét vẽ nên thơ thật đầm ấm ở một vùng quê xa xôi tác giả dường như làm ấm lòng cho người đọc.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-6-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-7-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-8-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-9-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 10", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/DiQuaHoaCuc/Sach-Noi-Audio-Book-Di-Qua-Hoa-Cuc-10-www.phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getCayChuoiNonDiGiayXanh() -> BookSummaryModel {
+    let bk = BookSummaryModel(20020, name: "Cây Chuối Non Đi Giày Xanh", author: "Nguyễn Nhật Ánh", chapters: "9", thumbnail: "cay-chuoi-non-di-giay-xanh", shortDesc: "Kỷ niệm bao giờ cũng đẹp và đặc biệt là không biết phản bội. Câu chuyện này kể về kỷ niệm. Có nỗi sợ trẻ con ai cũng từng qua, có rung động mơ hồ đủ khiến hồi hộp đỏ mặt. Mối ghen tuông len lỏi, nỗi buồn thắt tim, và những giấc mơ trong veo êm đềm mang đến niềm vui, niềm hy vọng…")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-01-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-04-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-06-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-07-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-08-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-dai-van-hoc-viet-nam-phat-phap-ung-dung/Cay-Chuoi-Non-Di-Giay-Xanh-09-phatphapungdung.com.mp3"))
+    
+    
+    return bk
+}
+
+func getNhungCoEmGai() -> BookSummaryModel {
+    let bk = BookSummaryModel(20021, name: "Những Cô Em Gái", author: "Nguyễn Nhật Ánh", chapters: "6", thumbnail: "nhung-co-em-gai", shortDesc: "Những Cô Em Gái là phần tiếp theo của truyện Hoa Hồng Xứ Khác. Truyện này nội dung lãng mạn và có nhiều vần thơ hay. Muốn biết cuộc phiêu lưu tình cảm mới của anh chàng Khoa ra sao và kết quả có tốt đẹp hơn mối tình đầu tiên của anh chàng hay không thì mời các bạn hãy cùng đón đọc truyện này.")
+    bk.tracks.append(TrackModel(name: "Chapter 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chapter 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-6-www.phatphapungdung.com.mp3"))
+    return bk
+    
 }
