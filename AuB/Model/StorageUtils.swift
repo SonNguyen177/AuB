@@ -9,11 +9,11 @@
 import Foundation
 
 let kFavourite = "Favourite"
+let kPlaying = "Playing"
 
 
 class StorageUtils {
     static let shared = StorageUtils()
-    //fileprivate var favorites : [String] = []
     func loadFavorite() -> [String] {
         if let saved = UserDefaults.standard.array(forKey: kFavourite) as? [String] {
             return saved
@@ -47,4 +47,20 @@ class StorageUtils {
         }
     }
     
+    func setPlaying(bookId: String, chapterIdx: Int){
+        UserDefaults.standard.setValue("\(bookId)|\(chapterIdx)", forKey: kPlaying)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getPlaying() -> (bookId: String, chapterIdx: Int)?{
+        
+        if let saved = UserDefaults.standard.string(forKey: kPlaying) {
+            let infos = saved.components(separatedBy: "|")
+            if infos.count == 2 {
+                return (infos[0], Int(infos[1])!)
+            }
+        }
+        
+        return nil
+    }
 }

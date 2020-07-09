@@ -1,5 +1,5 @@
 //
-//  PlayListViewController.swift
+//  PlayTrackListViewController.swift
 //  AuB
 //
 //  Created by Son Nguyen on 6/2/20.
@@ -9,12 +9,13 @@
 import UIKit
 import AVKit
 
-class PlayListViewController: UIViewController {
+class PlayTrackListViewController: UIViewController {
     var book : BookSummaryModel!
     let viewModel = PlayListVM()
     
     var player : AVPlayer?
     
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lbBookTitle: UILabel!
     @IBOutlet weak var lbAuthor: UILabel!
     @IBOutlet weak var imvCover: UIImageView!
@@ -42,6 +43,10 @@ class PlayListViewController: UIViewController {
     }
     
     func setupUI(){
+        btnClose.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        btnClose.setImage(UIImage(named: "ic-close")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnClose.tintColor = .lightGray
+        
         tblTrack.delegate = self
         tblTrack.dataSource = self
         tblTrack.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
@@ -122,6 +127,13 @@ class PlayListViewController: UIViewController {
     }
     
     //MARK: - Actions
+    @IBAction func pressDismiss(_ sender: Any) {
+        if let player = player {
+            player.pause()
+            self.view.sendSubviewToBack(vMiniPlayer)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func pressCloseMiniPlayer(_ sender: Any) {
         if let player = player {
@@ -131,7 +143,7 @@ class PlayListViewController: UIViewController {
     }
 }
 
-extension PlayListViewController : UITableViewDelegate, UITableViewDataSource {
+extension PlayTrackListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.bookModel.tracks.count
     }
@@ -145,6 +157,12 @@ extension PlayListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.bookModel.tracks[indexPath.row]
+        
+        //
+        StorageUtils.shared.setPlaying(bookId: viewModel.bookModel.no, chapterIdx: indexPath.row)
+        // notiy for tabbed
+        NotificationCenter.default.post(name: .NOTIFY_PLAYING_CHANGED, object: nil)
+        
         // playWithAVPlayerViewController(data.link)
         playWithBackground(data.link, title: data.title)
     }

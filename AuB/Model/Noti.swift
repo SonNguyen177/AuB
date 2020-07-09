@@ -10,6 +10,7 @@ import Foundation
 
 extension Notification.Name {
     
-    static let NOTIFY_FAVORITE_CHANGED = Notification.Name(
-        rawValue: "NOTIFY_FAVORITE_CHANGED")
+    static let NOTIFY_FAVORITE_CHANGED = Notification.Name(rawValue: "NOTIFY_FAVORITE_CHANGED")
+    
+    static let NOTIFY_PLAYING_CHANGED = Notification.Name(rawValue: "NOTIFY_PLAYING_CHANGED")
 }

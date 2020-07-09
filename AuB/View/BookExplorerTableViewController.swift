@@ -72,7 +72,7 @@ extension BookExplorerTableViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = viewModel.list[indexPath.row]
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = sb.instantiateViewController(withIdentifier: "playBook")as? PlayListViewController {
+        if let vc = sb.instantiateViewController(withIdentifier: "playBook")as? PlayTrackListViewController {
             vc.modalTransitionStyle = .crossDissolve // ios 13
             vc.book = model
             self.present(vc, animated: true, completion: nil)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C518BAFD24869C6F003B00B7 /* PlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */; };
+		C518BAFD24869C6F003B00B7 /* PlayTrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BAFC24869C6F003B00B7 /* PlayTrackListViewController.swift */; };
 		C518BAFF24869FB8003B00B7 /* UIRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */; };
 		C518BB022486A36D003B00B7 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BB012486A36D003B00B7 /* TrackModel.swift */; };
 		C518BB052486A3FB003B00B7 /* PlayListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BB042486A3FB003B00B7 /* PlayListVM.swift */; };
@@ -33,10 +33,12 @@
 		C5B651112474174D004B285F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6510F2474174D004B285F /* LaunchScreen.storyboard */; };
 		C5B6511A24741F8C004B285F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B6511924741F8C004B285F /* AVFoundation.framework */; };
 		C5B892852497C00100623407 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B892842497C00100623407 /* DataGenerator.swift */; };
+		C5D1702824B7611E002391E8 /* RecentPlayingViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D1702724B7611E002391E8 /* RecentPlayingViewController .swift */; };
+		C5D1702A24B76938002391E8 /* RecentPlayingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D1702924B76937002391E8 /* RecentPlayingVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListViewController.swift; sourceTree = "<group>"; };
+		C518BAFC24869C6F003B00B7 /* PlayTrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTrackListViewController.swift; sourceTree = "<group>"; };
 		C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRootTabViewController.swift; sourceTree = "<group>"; };
 		C518BB012486A36D003B00B7 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		C518BB042486A3FB003B00B7 /* PlayListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListVM.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		C5B651122474174D004B285F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5B6511924741F8C004B285F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C5B892842497C00100623407 /* DataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		C5D1702724B7611E002391E8 /* RecentPlayingViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentPlayingViewController .swift"; sourceTree = "<group>"; };
+		C5D1702924B76937002391E8 /* RecentPlayingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPlayingVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				C518BB042486A3FB003B00B7 /* PlayListVM.swift */,
 				C5A020E92497CDA50090F7C0 /* BookExplorerViewModel.swift */,
 				C523FE24249E5FD50044FF2C /* FavouriteVM.swift */,
+				C5D1702924B76937002391E8 /* RecentPlayingVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -107,8 +112,9 @@
 				C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */,
 				C5B6510624741746004B285F /* FirstViewController.swift */,
 				C5B6510824741746004B285F /* SecondViewController.swift */,
-				C518BAFC24869C6F003B00B7 /* PlayListViewController.swift */,
+				C518BAFC24869C6F003B00B7 /* PlayTrackListViewController.swift */,
 				C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */,
+				C5D1702724B7611E002391E8 /* RecentPlayingViewController .swift */,
 				C523FE22249E5CD00044FF2C /* FavouriteViewController.swift */,
 			);
 			path = View;
@@ -246,9 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C518BB052486A3FB003B00B7 /* PlayListVM.swift in Sources */,
-				C518BAFD24869C6F003B00B7 /* PlayListViewController.swift in Sources */,
+				C518BAFD24869C6F003B00B7 /* PlayTrackListViewController.swift in Sources */,
 				C523FE2E249E6BB40044FF2C /* BookFavoriteTableViewCell.swift in Sources */,
 				C5B6510924741746004B285F /* SecondViewController.swift in Sources */,
+				C5D1702824B7611E002391E8 /* RecentPlayingViewController .swift in Sources */,
 				C523FE27249E60F20044FF2C /* StorageUtils.swift in Sources */,
 				C518BB022486A36D003B00B7 /* TrackModel.swift in Sources */,
 				C523FE23249E5CD00044FF2C /* FavouriteViewController.swift in Sources */,
@@ -260,6 +267,7 @@
 				C5B6510324741746004B285F /* AppDelegate.swift in Sources */,
 				C523FE25249E5FD50044FF2C /* FavouriteVM.swift in Sources */,
 				C5B6510524741746004B285F /* SceneDelegate.swift in Sources */,
+				C5D1702A24B76938002391E8 /* RecentPlayingVM.swift in Sources */,
 				C523FE2A249E637A0044FF2C /* Noti.swift in Sources */,
 				C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */,
 				C5B892852497C00100623407 /* DataGenerator.swift in Sources */,

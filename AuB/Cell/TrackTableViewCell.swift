@@ -20,10 +20,25 @@ class TrackTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        if !selected {
+            lbTitle.textColor = .darkGray
+            lbTitle.font = UIFont.systemFont(ofSize: 17)
+        } else {
+            lbTitle.textColor = .black
+            lbTitle.font = UIFont.boldSystemFont(ofSize: 17)
+        }
     }
     
-    func bind(_ track : TrackModel){
+    func bind(_ track : TrackModel, isLastListeningTrack: Bool = false){
         lbTitle.text = track.title
+        if isLastListeningTrack {
+//            lbTitle.textColor = .darkGray
+//            lbTitle.font = UIFont.systemFont(ofSize: 17)
+            setSelected(true, animated: false)
+        } else {
+//            lbTitle.textColor = .black
+//            lbTitle.font = UIFont.boldSystemFont(ofSize: 17)
+        }
     }
     
 }
