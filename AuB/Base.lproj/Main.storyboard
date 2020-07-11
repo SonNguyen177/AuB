@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Favourite View Controller-->
+        <!--Yêu thích-->
         <scene sceneID="y2t-bI-sDD">
             <objects>
                 <viewController id="tss-fe-5lg" customClass="FavouriteViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="laK-F4-CLj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Jfg-7p-vp5"/>
+                    <tabBarItem key="tabBarItem" title="Yêu thích" image="ic_bookmark" selectedImage="ic_bookmark" id="Jfg-7p-vp5"/>
                     <connections>
                         <outlet property="tableView" destination="Qpt-qj-gbq" id="1qd-Zf-IBn"/>
                     </connections>
@@ -146,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="-483" y="1039"/>
         </scene>
-        <!--Recent Playing View Controller-->
+        <!--Vừa nghe-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="RecentPlayingViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +230,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Vừa nghe" image="ic_headphone" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="imvCover" destination="s6f-ZJ-egZ" id="c7M-MA-jnB"/>
                         <outlet property="lbAuthor" destination="NDk-cv-Gan" id="n3N-PE-88W"/>
@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="1246" y="469"/>
         </scene>
-        <!--Book Explorer Table View Controller-->
+        <!--Danh sách-->
         <scene sceneID="NUP-i2-jjz">
             <objects>
                 <viewController id="e55-qC-SlF" customClass="BookExplorerTableViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,7 +266,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ehf-s0-hsI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Rld-DE-8tf"/>
+                    <tabBarItem key="tabBarItem" title="Danh sách" image="ic_home" id="Rld-DE-8tf"/>
                     <connections>
                         <outlet property="tableView" destination="I6c-nh-wEy" id="NXF-Y1-21V"/>
                     </connections>
@@ -279,15 +279,17 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" customClass="UIRootTabViewController" customModule="AuB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="e55-qC-SlF" kind="relationship" relationship="viewControllers" id="hOo-AM-Znv"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="tss-fe-5lg" kind="relationship" relationship="viewControllers" id="I1e-gQ-nso"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -409,6 +411,9 @@
     </scenes>
     <resources>
         <image name="ic-close" width="128" height="128"/>
+        <image name="ic_bookmark" width="25" height="25"/>
+        <image name="ic_headphone" width="25" height="25"/>
+        <image name="ic_home" width="25" height="25"/>
         <image name="speaker.slash" catalog="system" width="128" height="124"/>
         <image name="trai-hoa-vang" width="1280" height="770"/>
     </resources>

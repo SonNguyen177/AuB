@@ -16,6 +16,9 @@ class TrackModel {
     var title = ""
     var link = ""
     
+    // addition
+    var isPlayed = false
+    
     convenience init( name: String, link: String) {
         self.init()
         self.title = name

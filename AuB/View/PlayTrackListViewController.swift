@@ -157,7 +157,12 @@ extension PlayTrackListViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.bookModel.tracks[indexPath.row]
+        for item in viewModel.bookModel!.tracks {
+            item.isPlayed = false
+        }
         
+        data.isPlayed = true
+        tableView.reloadData()
         //
         StorageUtils.shared.setPlaying(bookId: viewModel.bookModel.no, chapterIdx: indexPath.row)
         // notiy for tabbed

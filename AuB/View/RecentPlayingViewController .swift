@@ -179,11 +179,10 @@ extension RecentPlayingViewController  : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TrackTableViewCell
         if let model = viewModel.bookModel?.tracks[indexPath.row] {
-            var isListening = false
             if viewModel.bookNo == viewModel.bookModel?.no && viewModel.trackIdx == indexPath.row {
-                isListening = true
+                model.isPlayed = true
             }
-            cell.bind(model, isLastListeningTrack: isListening)
+            cell.bind(model)
         }
         return cell
     }
@@ -191,7 +190,12 @@ extension RecentPlayingViewController  : UITableViewDelegate, UITableViewDataSou
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let data = viewModel.bookModel?.tracks[indexPath.row] {
+            for item in viewModel.bookModel!.tracks {
+                item.isPlayed = false
+            }
             
+            data.isPlayed = true
+            tableView.reloadData()
             //
             StorageUtils.shared.setPlaying(bookId: viewModel.bookModel!.no, chapterIdx: indexPath.row)
             
