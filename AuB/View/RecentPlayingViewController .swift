@@ -44,11 +44,18 @@ class RecentPlayingViewController : UIViewController {
         super.viewWillAppear(animated)
         
         //tblTrack.reloadData()
+        if let player = player {
+            player.pause()
+            self.view.sendSubviewToBack(vMiniPlayer)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //NotificationCenter.default.removeObserver(self)
+        if let player = player {
+            player.pause()
+        }
     }
     
     func setupUI(){
@@ -88,8 +95,8 @@ class RecentPlayingViewController : UIViewController {
         
         playerController.showsPlaybackControls = true
         self.addChild(playerController)
-        let screenSize = UIScreen.main.bounds.size
-        let videoFrame = CGRect(x: 12, y: 40, width: screenSize.width - 24, height: 48)
+        //let screenSize = UIScreen.main.bounds.size
+        let videoFrame = CGRect(x: 0, y: 40, width: self.view.frame.width - 60, height: 48)
         playerController.view.frame = videoFrame
         self.vMiniPlayer.addSubview(playerController.view)
         
@@ -146,6 +153,8 @@ class RecentPlayingViewController : UIViewController {
                 self.viewModel.bookNo = saved.bookId
                 self.viewModel.trackIdx = saved.chapterIdx
                 self.viewModel.bookModel = bookModel
+                
+                bookModel.tracks[viewModel.trackIdx!].isPlayed = true
                 self.reloadData()
             }
         }
@@ -179,9 +188,6 @@ extension RecentPlayingViewController  : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TrackTableViewCell
         if let model = viewModel.bookModel?.tracks[indexPath.row] {
-            if viewModel.bookNo == viewModel.bookModel?.no && viewModel.trackIdx == indexPath.row {
-                model.isPlayed = true
-            }
             cell.bind(model)
         }
         return cell

@@ -20,8 +20,9 @@ class FavouriteViewController: UIViewController, FavoriteDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         //tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        tableView.rowHeight = 110
-        //        tableView.rowHeight = UITableView.automaticDimension
+        //tableView.rowHeight = 110
+        tableView.estimatedRowHeight = 110
+        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(UINib.init(nibName: "BookFavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "favCell")
         tableView.backgroundColor = .groupTableViewBackground

@@ -74,8 +74,8 @@ class PlayTrackListViewController: UIViewController {
         
         playerController.showsPlaybackControls = true
         self.addChild(playerController)
-        let screenSize = UIScreen.main.bounds.size
-        let videoFrame = CGRect(x: 12, y: 40, width: screenSize.width - 24, height: 48)
+       // let screenSize = UIScreen.main.bounds.size
+        let videoFrame = CGRect(x: 0, y: 40, width: self.view.frame.width - 60, height: 48)
         playerController.view.frame = videoFrame
         self.vMiniPlayer.addSubview(playerController.view)
         

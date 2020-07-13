@@ -216,7 +216,7 @@ class DataGenerator {
 }
 
 func getCoGaiDenTuHomQua() -> BookSummaryModel {
-    let bk = BookSummaryModel(20010, name: "Cô Gái Đến Từ Hôm Qua", author: "Nguyễn Nhật Ánh", chapters: "10", thumbnail: "co-gai-den-tu-hom-qua", shortDesc: "Với lối kết cấu hai phần song song, một bên là hiện tại, một bên là quá khứ, nhân vật “tôi” kể lại tình cảm với hai cô bạn ở hai quãng đời khác nhau. Tương tự như kết luận của nhà văn Đoàn Thạch Biền trong truyện ngắn Hồng Hà: con trai càng lớn càng ngu – nhân vật của Nguyễn Nhật Ánh cũng đầy “quyền lực” với con gái lúc còn… nhóc, và “mất giá” thê thảm khi ở tuổi trung học. Câu chuyện chỉ có vậy, nhưng ngòi bút của tác giả đã tạo nên những tình tiết vui nhộn, rất đặc trưng của từng lứa tuổi.")
+    let bk = BookSummaryModel(20010, name: "Cô Gái Đến Từ Hôm Qua", author: "Nguyễn Nhật Ánh", chapters: "8", thumbnail: "co-gai-den-tu-hom-qua", shortDesc: "Với lối kết cấu hai phần song song, một bên là hiện tại, một bên là quá khứ, nhân vật “tôi” kể lại tình cảm với hai cô bạn ở hai quãng đời khác nhau. Tương tự như kết luận của nhà văn Đoàn Thạch Biền trong truyện ngắn Hồng Hà: con trai càng lớn càng ngu – nhân vật của Nguyễn Nhật Ánh cũng đầy “quyền lực” với con gái lúc còn… nhóc, và “mất giá” thê thảm khi ở tuổi trung học. Câu chuyện chỉ có vậy, nhưng ngòi bút của tác giả đã tạo nên những tình tiết vui nhộn, rất đặc trưng của từng lứa tuổi.")
     bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-01-www.phatphapungdung.com.mp3"))
     bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-02-www.phatphapungdung.com.mp3"))
     bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-03-www.phatphapungdung.com.mp3"))
@@ -224,9 +224,9 @@ func getCoGaiDenTuHomQua() -> BookSummaryModel {
     bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-05-www.phatphapungdung.com.mp3"))
     bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-06-www.phatphapungdung.com.mp3"))
     bk.tracks.append(TrackModel(name: "Chương 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-07-www.phatphapungdung.com.mp3"))
-    bk.tracks.append(TrackModel(name: "Chương 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-08-www.phatphapungdung.com.mp3"))
-    bk.tracks.append(TrackModel(name: "Chương 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-09-www.phatphapungdung.com.mp3"))
-    bk.tracks.append(TrackModel(name: "Chương 10", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-10-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 8 - Hết", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-08-www.phatphapungdung.com.mp3"))
+//    bk.tracks.append(TrackModel(name: "Chương 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-09-www.phatphapungdung.com.mp3"))
+//    bk.tracks.append(TrackModel(name: "Chương 10", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/CoGaiDenTuHomQua/Sach-Noi-Audio-Book-Co-Gai-Den-Tu-Hom-Qua-10-www.phatphapungdung.com.mp3"))
     return bk
 }
 

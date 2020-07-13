@@ -16,6 +16,9 @@ class UIRootTabViewController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+    }
 
     /*
     // MARK: - Navigation
