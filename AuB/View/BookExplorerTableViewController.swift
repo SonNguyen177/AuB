@@ -1,5 +1,5 @@
 //
-//  BookExplorerTableViewController.swift
+//  BookExplorerViewController.swift
 //  AuB
 //
 //  Created by Son Nguyen on 6/15/20.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class BookExplorerTableViewController: UIViewController {
+class BookExplorerViewController: UIViewController, BookExplorerDelegate {
+    
     let viewModel = BookExplorerViewModel()
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,6 +29,10 @@ class BookExplorerTableViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
+        
+        searchBar.placeholder = "Tên truyện hoặc tác giả"
+        searchBar.delegate = self
+        viewModel.delegate = self
     
     }
     
@@ -36,8 +42,8 @@ class BookExplorerTableViewController: UIViewController {
     }
     
     func changeFavourite(atRow: Int){
-        if viewModel.list.count > atRow {
-            let model = viewModel.list[atRow]
+        if viewModel.displayData.count > atRow {
+            let model = viewModel.displayData[atRow]
             model.isFavorite = !model.isFavorite
             model.isFavorite ? StorageUtils.shared.addFavorite(model.no) : StorageUtils.shared.removeFavorite(model.no)
             
@@ -45,9 +51,13 @@ class BookExplorerTableViewController: UIViewController {
             tableView.reloadRows(at: [IndexPath(row: atRow, section: 0)], with: .none)
         }
     }
+    
+    func didFilterData() {
+        self.tableView.reloadData()
+    }
 }
 
-extension BookExplorerTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension BookExplorerViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,25 +67,44 @@ extension BookExplorerTableViewController: UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel.list.count
+        return viewModel.displayData.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookCoverTableViewCell
-        cell.bind(viewModel.list[indexPath.row])
+        cell.bind(viewModel.displayData[indexPath.row])
         cell.tag = indexPath.row
         cell.actionFavorite = self.changeFavourite
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = viewModel.list[indexPath.row]
+        let model = viewModel.displayData[indexPath.row]
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let vc = sb.instantiateViewController(withIdentifier: "playBook")as? PlayTrackListViewController {
             vc.modalTransitionStyle = .crossDissolve // ios 13
             vc.book = model
             self.present(vc, animated: true, completion: nil)
         }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+extension BookExplorerViewController: UISearchBarDelegate {
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let keyword = searchText.trimmingCharacters(in: .whitespaces)
+        viewModel.searchText = keyword
     }
 }

@@ -7,11 +7,19 @@
 //
 
 import Foundation
+
+protocol BookExplorerDelegate: class {
+    func didFilterData()
+}
+
+
 class BookExplorerViewModel {
     var list: [BookSummaryModel]
-    
+    var displayData : [BookSummaryModel]
+    var delegate : BookExplorerDelegate?
     init() {
         list = DataGenerator.defaultData()
+        displayData = list
         // check is Favourite
         let favList = StorageUtils.shared.loadFavorite()
         if favList.count > 0{
@@ -20,6 +28,18 @@ class BookExplorerViewModel {
                     existed.isFavorite = true
                 }
             }
+        }
+    }
+    
+    var searchText: String  = "" {
+        didSet{
+            if searchText.isEmpty {
+                self.displayData = list
+            } else {
+                self.displayData = list.filter{ $0.isMatched(searchText)}
+            }
+            
+            self.delegate?.didFilterData()
         }
     }
 }

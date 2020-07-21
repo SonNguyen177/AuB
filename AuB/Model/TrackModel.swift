@@ -52,4 +52,12 @@ class BookSummaryModel {
         self.thumbnail = thumbnail
         self.shortDesc = shortDesc
     }
+    
+    // for searching
+    func isMatched(_ keyword: String) -> Bool {
+        var retVal = false
+        let unmarkKeyword = ConvertHelper.convertVietNam(keyword.lowercased())
+        retVal = ConvertHelper.convertVietNam(author.lowercased()).contains(unmarkKeyword) || ConvertHelper.convertVietNam(name.lowercased()).contains(unmarkKeyword)
+        return retVal
+    }
 }
