@@ -67,7 +67,7 @@ class FavouriteViewController: UIViewController, FavoriteDelegate {
         // Set message title, body, and icon. Here, we're overriding the default warning
         // image with an emoji character.
        // let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
-        view.configureContent(title: "Ờ, lạ ghê ha!", body: "Cả chồng sách vậy mà bạn chưa lựa được cuốn nào sao?", iconText: "🤔")
+        view.configureContent(title: "Ờ, lạ ghê ha!", body: "Cả bầu trời sách vậy mà bạn chưa lựa được cuốn nào sao?", iconText: "🤔")
 
         // Increase the external margin around the card. In general, the effect of this setting
         // depends on how the given layout is constrained to the layout margins.
@@ -86,7 +86,7 @@ class FavouriteViewController: UIViewController, FavoriteDelegate {
         config.duration = .forever
         //config.duration = .indefinite(delay: 0, minimum: 2)
         config.presentationContext = .view(self.view)
-        //config.dimMode = .gray(interactive: false)
+        config.dimMode = .none// .gray(interactive: false)
         config.ignoreDuplicates = false
 
         // Show message with default config.

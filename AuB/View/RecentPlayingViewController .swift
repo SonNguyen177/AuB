@@ -75,7 +75,7 @@ class RecentPlayingViewController : UIViewController {
         
         // Set message title, body, and icon. Here, we're overriding the default warning
         // image with an emoji character.
-        view.configureContent(title: "Có thiệt không đó?", body: "Sách thì hay mà chúng ta đều trẻ, không nghe phí hoài thanh xuân đó bạn ơi", iconText: "🙄")
+        view.configureContent(title: "Có thiệt không đó?", body: "Sách thì hay mà chúng ta thì trẻ, không nghe sách bây giờ là phí hoài thanh xuân đó bạn", iconText: "🙄")
         
         // Increase the external margin around the card. In general, the effect of this setting
         // depends on how the given layout is constrained to the layout margins.
@@ -106,7 +106,7 @@ class RecentPlayingViewController : UIViewController {
         config.duration = .forever
         
         // Dim the background like a popover view. Hide when the background is tapped.
-        config.dimMode = .gray(interactive: true)
+        config.dimMode = .none//.gray(interactive: true)
         
         config.ignoreDuplicates = false
         
@@ -116,10 +116,10 @@ class RecentPlayingViewController : UIViewController {
         // Specify a status bar style to if the message is displayed directly under the status bar.
         config.preferredStatusBarStyle = .lightContent
         
-        // Specify one or more event listeners to respond to show and hide events.
-        config.eventListeners.append() { event in
-            if case .didHide = event { print("yep") }
-        }
+//        // Specify one or more event listeners to respond to show and hide events.
+//        config.eventListeners.append() { event in
+//            if case .didHide = event { print("yep") }
+//        }
         
         SwiftMessages.show(config: config, view: view)
     }

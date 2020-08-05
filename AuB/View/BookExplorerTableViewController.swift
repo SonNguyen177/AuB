@@ -11,6 +11,7 @@ import UIKit
 class BookExplorerViewController: UIViewController, BookExplorerDelegate {
     
     let viewModel = BookExplorerViewModel()
+    var offset : CGFloat = 0
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +20,7 @@ class BookExplorerViewController: UIViewController, BookExplorerDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: searchBar.frame.size.height, left: 0, bottom: 80, right: 0)
         tableView.rowHeight = 220
 //        tableView.rowHeight = UITableView.automaticDimension
         
@@ -33,11 +34,14 @@ class BookExplorerViewController: UIViewController, BookExplorerDelegate {
         searchBar.placeholder = "Tên truyện hoặc tác giả"
         searchBar.delegate = self
         viewModel.delegate = self
+        
+        
     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        offset = searchBar.frame.origin.y
         tableView.reloadData()
     }
     
@@ -91,6 +95,29 @@ extension BookExplorerViewController: UITableViewDelegate, UITableViewDataSource
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.resignFirstResponder()
+        UIView.animate(withDuration: 0.2) {
+            self.searchBar.frame.origin.y = -90
+            self.searchBar.alpha = 0
+        }
+        
+    }
+    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        print(#function)
+//        searchBar.isHidden = false
+//    }
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        print(#function)
+//        searchBar.isHidden = false
+//    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print(#function)
+        UIView.animate(withDuration: 0.2) {
+            self.searchBar.alpha = 1
+            self.searchBar.frame.origin.y = self.tableView.frame.origin.y
+        }
     }
 }
 

@@ -252,18 +252,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I6c-nh-wEy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Do1-5f-7aG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I6c-nh-wEy">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="I6c-nh-wEy" firstAttribute="top" secondItem="Do1-5f-7aG" secondAttribute="bottom" id="207-s6-uI7"/>
+                            <constraint firstItem="I6c-nh-wEy" firstAttribute="top" secondItem="Ehf-s0-hsI" secondAttribute="top" id="207-s6-uI7"/>
                             <constraint firstItem="Do1-5f-7aG" firstAttribute="trailing" secondItem="Ehf-s0-hsI" secondAttribute="trailing" id="Am4-KH-a1e"/>
                             <constraint firstItem="Ehf-s0-hsI" firstAttribute="bottom" secondItem="I6c-nh-wEy" secondAttribute="bottom" id="DCI-kE-Pl0"/>
                             <constraint firstItem="Ehf-s0-hsI" firstAttribute="trailing" secondItem="I6c-nh-wEy" secondAttribute="trailing" id="Dqw-wZ-pgE"/>
