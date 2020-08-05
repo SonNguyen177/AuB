@@ -8,9 +8,10 @@
 
 import UIKit
 import AVKit
+import SwiftMessages
 
 class RecentPlayingViewController : UIViewController {
-   
+    
     let viewModel = RecentPlayingVM()
     
     var player : AVPlayer?
@@ -28,9 +29,9 @@ class RecentPlayingViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
-        selector: #selector(lastPlayingChanged),
-        name: .NOTIFY_PLAYING_CHANGED,
-        object: nil)
+                                               selector: #selector(lastPlayingChanged),
+                                               name: .NOTIFY_PLAYING_CHANGED,
+                                               object: nil)
         
         // Do any additional setup after loading the view.
         setupUI()
@@ -38,7 +39,7 @@ class RecentPlayingViewController : UIViewController {
         // get from saved
         loadDataFromStorage()
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,7 +49,91 @@ class RecentPlayingViewController : UIViewController {
             player.pause()
             self.view.sendSubviewToBack(vMiniPlayer)
         }
+        
+        if viewModel.bookModel == nil {
+            showEmptyMessage()
+        } else {
+            SwiftMessages.hideAll()
+        }
     }
+    
+    
+    
+    func showEmptyMessage(){
+        // Instantiate a message view from the provided card view layout. SwiftMessages searches for nib
+        // files in the main bundle first, so you can easily copy them into your project and make changes.
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.titleLabel?.numberOfLines = 0
+        view.titleLabel?.lineBreakMode = .byWordWrapping
+        view.button?.isHidden = true
+        
+        // Theme message elements with the warning style.
+        view.configureTheme(.info)
+        
+        // Add a drop shadow.
+        view.configureDropShadow()
+        
+        // Set message title, body, and icon. Here, we're overriding the default warning
+        // image with an emoji character.
+        view.configureContent(title: "Có thiệt không đó?", body: "Sách thì hay mà chúng ta đều trẻ, không nghe phí hoài thanh xuân đó bạn ơi", iconText: "🙄")
+        
+        // Increase the external margin around the card. In general, the effect of this setting
+        // depends on how the given layout is constrained to the layout margins.
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        // Reduce the corner radius (applicable to layouts featuring rounded corners).
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+        
+        // Show the message.
+        //        SwiftMessages.show(view: view)
+        
+        SwiftMessages.defaultConfig.presentationStyle = .top
+        SwiftMessages.defaultConfig.duration = .seconds(seconds: 10)
+        
+        // Show message with default config.
+        //            SwiftMessages.show(view: view)
+        
+        var config = SwiftMessages.Config()
+        
+        // Slide up from the bottom.
+        config.presentationStyle = .center
+        
+        // Display in a window at the specified window level: UIWindow.Level.statusBar
+        // displays over the status bar while UIWindow.Level.normal displays under.
+        config.presentationContext = .view(self.view)
+        
+        // Disable the default auto-hiding behavior.
+        config.duration = .forever
+        
+        // Dim the background like a popover view. Hide when the background is tapped.
+        config.dimMode = .gray(interactive: true)
+        
+        config.ignoreDuplicates = false
+        
+        // Disable the interactive pan-to-hide gesture.
+        config.interactiveHide = false
+        
+        // Specify a status bar style to if the message is displayed directly under the status bar.
+        config.preferredStatusBarStyle = .lightContent
+        
+        // Specify one or more event listeners to respond to show and hide events.
+        config.eventListeners.append() { event in
+            if case .didHide = event { print("yep") }
+        }
+        
+        SwiftMessages.show(config: config, view: view)
+    }
+    
+    //        func changeFavourite(atRow: Int){
+    //            if viewModel.list.count > atRow {
+    //                let model = viewModel.list[atRow]
+    //                model.isFavorite = !model.isFavorite
+    //                model.isFavorite ? StorageUtils.shared.addFavorite(model.no) : StorageUtils.shared.removeFavorite(model.no)
+    //
+    //                // reload seprate row
+    //                tableView.reloadRows(at: [IndexPath(row: atRow, section: 0)], with: .none)
+    //            }
+    //        }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -87,7 +172,7 @@ class RecentPlayingViewController : UIViewController {
                 imvCover.image = UIImage(named: model.thumbnail)
             }
             
-             tblTrack.reloadData()
+            tblTrack.reloadData()
         }
     }
     
@@ -193,7 +278,7 @@ extension RecentPlayingViewController  : UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let data = viewModel.bookModel?.tracks[indexPath.row] {
             for item in viewModel.bookModel!.tracks {

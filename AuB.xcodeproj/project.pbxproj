@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3013C70742481D79BB8FCAB5 /* Pods_AuB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F022DCE77EBDF35B3119CE /* Pods_AuB.framework */; };
 		C518BAFD24869C6F003B00B7 /* PlayTrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BAFC24869C6F003B00B7 /* PlayTrackListViewController.swift */; };
 		C518BAFF24869FB8003B00B7 /* UIRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */; };
 		C518BB022486A36D003B00B7 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518BB012486A36D003B00B7 /* TrackModel.swift */; };
@@ -20,6 +21,7 @@
 		C523FE2A249E637A0044FF2C /* Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE29249E637A0044FF2C /* Noti.swift */; };
 		C523FE2D249E6BB40044FF2C /* BookFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C523FE2B249E6BB40044FF2C /* BookFavoriteTableViewCell.xib */; };
 		C523FE2E249E6BB40044FF2C /* BookFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523FE2C249E6BB40044FF2C /* BookFavoriteTableViewCell.swift */; };
+		C535075424DA465F00BFE011 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C535075324DA465F00BFE011 /* Podfile */; };
 		C5934B8324C7284C00E19467 /* ConvertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5934B8224C7284C00E19467 /* ConvertUtils.swift */; };
 		C5A020E42497C5400090F7C0 /* BookExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */; };
 		C5A020E72497C79B0090F7C0 /* BookCoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8737E845BCBE660DBAFF0571 /* Pods-AuB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuB.release.xcconfig"; path = "Target Support Files/Pods-AuB/Pods-AuB.release.xcconfig"; sourceTree = "<group>"; };
+		A7152577116248490957B9FB /* Pods-AuB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuB.debug.xcconfig"; path = "Target Support Files/Pods-AuB/Pods-AuB.debug.xcconfig"; sourceTree = "<group>"; };
 		C518BAFC24869C6F003B00B7 /* PlayTrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTrackListViewController.swift; sourceTree = "<group>"; };
 		C518BAFE24869FB8003B00B7 /* UIRootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRootTabViewController.swift; sourceTree = "<group>"; };
 		C518BB012486A36D003B00B7 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 		C523FE29249E637A0044FF2C /* Noti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noti.swift; sourceTree = "<group>"; };
 		C523FE2B249E6BB40044FF2C /* BookFavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookFavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		C523FE2C249E6BB40044FF2C /* BookFavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		C535075324DA465F00BFE011 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		C5934B8224C7284C00E19467 /* ConvertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertUtils.swift; sourceTree = "<group>"; };
 		C5A020E32497C5400090F7C0 /* BookExplorerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookExplorerTableViewController.swift; sourceTree = "<group>"; };
 		C5A020E52497C79A0090F7C0 /* BookCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverTableViewCell.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		C5B892842497C00100623407 /* DataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		C5D1702724B7611E002391E8 /* RecentPlayingViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentPlayingViewController .swift"; sourceTree = "<group>"; };
 		C5D1702924B76937002391E8 /* RecentPlayingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPlayingVM.swift; sourceTree = "<group>"; };
+		C5F022DCE77EBDF35B3119CE /* Pods_AuB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +86,23 @@
 			files = (
 				C5B6511A24741F8C004B285F /* AVFoundation.framework in Frameworks */,
 				C518BB0E2486AE6C003B00B7 /* AudioToolbox.framework in Frameworks */,
+				3013C70742481D79BB8FCAB5 /* Pods_AuB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B29BD8E0B26E9EF5C8998B15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7152577116248490957B9FB /* Pods-AuB.debug.xcconfig */,
+				8737E845BCBE660DBAFF0571 /* Pods-AuB.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C518BB002486A256003B00B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +166,7 @@
 				C5B6510124741746004B285F /* AuB */,
 				C5B6510024741746004B285F /* Products */,
 				C5B6511824741F8C004B285F /* Frameworks */,
+				B29BD8E0B26E9EF5C8998B15 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +181,7 @@
 		C5B6510124741746004B285F /* AuB */ = {
 			isa = PBXGroup;
 			children = (
+				C535075324DA465F00BFE011 /* Podfile */,
 				C5934B8124C7283A00E19467 /* Utils */,
 				C518BB0C2486AE6C003B00B7 /* AuB.entitlements */,
 				C518BB072486A901003B00B7 /* Cell */,
@@ -184,6 +203,7 @@
 			children = (
 				C518BB0D2486AE6C003B00B7 /* AudioToolbox.framework */,
 				C5B6511924741F8C004B285F /* AVFoundation.framework */,
+				C5F022DCE77EBDF35B3119CE /* Pods_AuB.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5B651152474174D004B285F /* Build configuration list for PBXNativeTarget "AuB" */;
 			buildPhases = (
+				8046C90020CB540E0F02866B /* [CP] Check Pods Manifest.lock */,
 				C5B650FB24741746004B285F /* Sources */,
 				C5B650FC24741746004B285F /* Frameworks */,
 				C5B650FD24741746004B285F /* Resources */,
+				8B2DFD55A08395B01F0CEDF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,11 +273,54 @@
 				C523FE2D249E6BB40044FF2C /* BookFavoriteTableViewCell.xib in Resources */,
 				C5B6510E2474174D004B285F /* Assets.xcassets in Resources */,
 				C5B6510C24741746004B285F /* Main.storyboard in Resources */,
+				C535075424DA465F00BFE011 /* Podfile in Resources */,
 				C518BB0B2486A922003B00B7 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8046C90020CB540E0F02866B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B2DFD55A08395B01F0CEDF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuB/Pods-AuB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuB/Pods-AuB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuB/Pods-AuB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C5B650FB24741746004B285F /* Sources */ = {
@@ -424,6 +489,7 @@
 		};
 		C5B651162474174D004B285F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7152577116248490957B9FB /* Pods-AuB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AuB/AuB.entitlements;
@@ -444,6 +510,7 @@
 		};
 		C5B651172474174D004B285F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8737E845BCBE660DBAFF0571 /* Pods-AuB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AuB/AuB.entitlements;

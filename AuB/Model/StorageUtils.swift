@@ -9,7 +9,7 @@
 import Foundation
 
 let kFavourite = "Favourite"
-let kPlaying = "Playing"
+let kPlaying = "LastPlaying"
 
 
 class StorageUtils {

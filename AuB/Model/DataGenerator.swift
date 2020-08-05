@@ -15,20 +15,24 @@ class DataGenerator {
         var stores = [BookSummaryModel]()
         
         stores.append(ConChutGiDeNho())
-        stores.append(ChuBeRacRoi())
-        stores.append(ChoToiXinMotVeDiTuoiTho())
         stores.append(getToiThayHoaVagTrenCoXanh())
-        
+        stores.append(ChuBeRacRoi())
         stores.append(getCayChuoiNonDiGiayXanh())
+        stores.append(ChoToiXinMotVeDiTuoiTho())
         stores.append(TraiHoaVang())
+        stores.append(getThienThanNhoCuaToi())
         
         stores.append(getDiQuaHoaCuc())
         stores.append(HaDo())
-        stores.append(MatBiec())
         stores.append(NgoiKhocTrenCay())
+        stores.append(MatBiec())
+        stores.append(getSuongKhoiQueNha())
+        stores.append(getNguoiQuangDiAnMiQuang())
+        stores.append(getChuyenCoTichDanhChoNguoiLon())
         
         stores.append(HoaHongXuKhac())
         stores.append(getNhungCoEmGai())
+        stores.append(getUtQuyenVaToi())
         stores.append(NgoiTruongMoiKhi())
         stores.append(LaNamTrongLa())
         stores.append(NhungChangTraiXauTinh())
@@ -41,9 +45,12 @@ class DataGenerator {
         
         stores.append(getPhongTroBaNguoi())
         stores.append(getBanCoNamChoNgoi())
+        stores.append(getTruocVongChungKet())
+        stores.append(getToiLaBeto())
         
         stores.append(getKVHNhaAoThuat())
        
+        print("Stories: \(stores.count)")
         return stores
     }
     
@@ -363,4 +370,92 @@ func getNhungCoEmGai() -> BookSummaryModel {
     bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NhungCoEmGai/Sach-Noi-Audio-Book-Nhung-Co-Em-Gai-6-www.phatphapungdung.com.mp3"))
     return bk
     
+}
+
+func getUtQuyenVaToi() -> BookSummaryModel {
+    let bk = BookSummaryModel(2022, name: "Út Quyên Và Tôi", author: "Nguyễn Nhật Ánh", chapters: "12", thumbnail: "ut-quyen-va-toi", shortDesc: "Tập truyện ngắn với 12 câu chuyện là 12 niềm vui, 12 kỉ niệm dễ thương, 12 bài học giản dị mà sâu sắc… Gặp trong tập truyện này những hình ảnh rất dễ thương, những lời thoại rất học trò…")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-01-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-04-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-06-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-07-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 8", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-08-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 9", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-09-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 10", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-10-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 11", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-11-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 12", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Ut-Quyen-Va-Toi-12-phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getTruocVongChungKet() -> BookSummaryModel {
+    let bk = BookSummaryModel(2023, name: "Trước Vòng Chung Kết", author: "Nguyễn Nhật Ánh", chapters: "6", thumbnail: "truoc-vong-chung-ket", shortDesc: "Dưới sân, các cẩu thủ Hải Quan ôm nhau. Trên khán đài, thằng Tân ôm mặt. Sự huyên náo bùng nổ và lan truyền trong đám đông không thua gì lúc nãy. Nhưng trên các gương mặt, niềm vui và nỗi buồn đã đổi chỗ cho nhau. Như một đứa trẻ, ông gia dù đen bay vút lên khỏi chỗ ngồi, còn bay cao hơn thằng Tân khi nãy. Ông già dù như thể chim đập cánh, hăng hái đến nỗi rớt một chiếc dép xuống “trần gian.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-5-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/TruocVongChungKet/Sach-Noi-Audio-Book-Truoc-Vong-Chung-Ket-6-www.phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+
+func getSuongKhoiQueNha() -> BookSummaryModel {
+    let bk = BookSummaryModel(2024, name: "Sương Khói Quê Nhà", author: "Nguyễn Nhật Ánh", chapters: "7", thumbnail: "suong-khoi-que-nha", shortDesc: "Có thể đặt tên nôm na 3 phần theo số thứ tự trong cuốn Tạp văn mới của Nguyễn Nhật Ánh \"Sương khói quê nhà\": Tình quê, Người thân, và Những chuyến đi. 34 bài báo, viết từ 2010 đến nay, về các đề tài khác nhau. Những nhớ thương miền quê nghèo Quảng Nam qua kỷ niệm thời thơ bé; tình đời , tình người; tình thâm với bạn văn và những người mà anh yêu quý. Là những suy ngẫm của anh về cuộc đời, qua vô vàn chi tiết nhỏ trong phát hiện khiến đọc là thấy bất ngờ đầy thích thú.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-04-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-06-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Tap-Van-Suong-Khoi-Que-Nha-07-phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getToiLaBeto() -> BookSummaryModel {
+    let bk = BookSummaryModel(2025, name: "Tôi Là BêTô", author: "Nguyễn Nhật Ánh", chapters: "2", thumbnail: "toi-la-be-to", shortDesc: "Với Tôi là Bêtô, đây là lần đầu tiên anh viết một tác phẩm qua lời kể của một chú cún. Trong thiên truyện này, thế giới được nhìn một cách trong trẻo nhưng lồng trong đó không thiếu những ý tứ thâm trầm, khiến người đọc phải ngẫm nghĩ. Đây chắc chắn là tác phẩm không chỉ dành cho trẻ em.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ToiLaBeto/Sach-Noi-Audio-Book-Toi-La-Beto-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ToiLaBeto/Sach-Noi-Audio-Book-Toi-La-Beto-2-www.phatphapungdung.com.mp3"))
+    
+    return bk
+}
+
+func getThienThanNhoCuaToi() -> BookSummaryModel {
+    let bk = BookSummaryModel(2026, name: "Thiên Thần Nhỏ Của Tôi", author: "Nguyễn Nhật Ánh", chapters: "5", thumbnail: "thien-than-nho-cua-toi", shortDesc: "Thế là một lần nữa gia đình tôi lại dọn nhà. Đây là lần dọn nhà thứ ba trong bốn năm qua. Thông thường, sự thay đổi chỗ ở lên tục bao giờ cũng kéo theo những phiền phức. Nó làm cho cuộc sống luôn bị xáo trộn và việc ổn định nề nếp sinh hoạt gặp nhiều khó khăn. Vì vậy người ta thường bắt gặp trên những gương mặt đẫm mồ hôi và bụi bậm của những người dọn nhà vô số những nếp nhăn nhỏ, mệt mỏi khiến người nào người nấy trông cứ khó đăm đăm. Nhưng đó là theo lẽ thường. Ngoài lẽ thường ra, cuộc đời còn nhiều lẽ khác nữa. Gia đình tôi thuộc về trường hợp sau. Những ngày dọn nhà đối với chúng tôi là những ngày lễ hội thực sự. Mặt người nào người nấy tươi hơn hớn.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ThienThanNhoCuaToi/Sach-Noi-Audio-Book-Thien-Than-Nho-Cua-Toi-1-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ThienThanNhoCuaToi/Sach-Noi-Audio-Book-Thien-Than-Nho-Cua-Toi-2-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ThienThanNhoCuaToi/Sach-Noi-Audio-Book-Thien-Than-Nho-Cua-Toi-3-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ThienThanNhoCuaToi/Sach-Noi-Audio-Book-Thien-Than-Nho-Cua-Toi-4-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/ThienThanNhoCuaToi/Sach-Noi-Audio-Book-Thien-Than-Nho-Cua-Toi-5-www.phatphapungdung.com.mp3"))
+    return bk
+}
+
+func getNguoiQuangDiAnMiQuang() -> BookSummaryModel {
+    let bk = BookSummaryModel(2027, name: "Người Quảng Đi Ăn Mì Quảng", author: "Nguyễn Nhật Ánh", chapters: "6", thumbnail: "nguoi-quang-di-an-mi-quang", shortDesc: "Người Quảng Đi Ăn Mì Quảng giống như một tiệm mì mà nơi đó nhà văn chính là đầu bếp, cũng là chủ tiệm còn 35 tạp văn là 35 món trong thực đơn của quán. Nói như thế để hiểu Người Quảng Đi Ăn Mì Quảng gần gũi, đa dạng tựa như một góc nhỏ của xã hội. Nơi ấy có đóa hoa đào trong tranh, chuyện siêu thị, chuyện sách, chuyện người trẻ… muôn mặt của cuộc sống hiện ra trên những trang sách của Nguyễn Nhật Ánh.  Vẫn thân thiện, hóm hỉnh, nhẹ nhàng, Người Quảng Đi Ăn Mì Quảng tựa như cuộc chuyện trò sau bữa ăn. Một chút quá khứ, một chút hiện tại và một chút tương lai giao hòa như tô mì Quảng thêm chút gia vị này kia cho hợp với khẩu vị người ăn. Và, cũng giống tô mì Quảng, Người Quảng Đi Ăn Mì Quảng trở thành khúc biến tấu sinh động, hợp cảnh giữa ngổn ngang hàng quán, khói bụi của cuộc sống thường nhật.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-01-Lonvanho-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-02-Ngonngangphoxa-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-03-Buongidau-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-04-Amaptrongmua-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-05-Nghecailuongbensong-Tien-www.phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/TruyenDoc/NguoiQuangDiAnMiQuang/Sach-Noi-Audio-Book-Nguoi-Quang-Di-An-Mi-Quang-06-Cacbancungconhungcohoi-www.phatphapungdung.com.mp3"))
+    
+    return bk
+    
+}
+
+func getChuyenCoTichDanhChoNguoiLon() -> BookSummaryModel {
+    let bk = BookSummaryModel(2028, name: "Chuyện Cổ Tích Dành Cho Người Lớn", author: "Nguyễn Nhật Ánh", chapters: "7", thumbnail: "chuyen-co-tich-danh-cho-nguoi-lon", shortDesc: "Cuốn sách chủ yếu đề cập đến những vấn đề trong cuộc sống hôn nhân, giữa 2 vợ chồng với nhau. Với văn phong hài hước, Nguyễn Nhật Ánh đã khiến cho những việc rất đỗi bình thường ấy trở nên rất thú vị. Những xung đột thường ngày dẫn đến những vết nứt không đáng có, cuốn sách đã phản ánh rất thật những bức tranh muôn màu của cuộc sống thường ngày, của những người trong gia đình với nhau, sau khi bạn đọc xong tập truyện này sẽ khám phá được những điều mới mẻ và từ đó nhìn lại được cuộc sống của mình.")
+    bk.tracks.append(TrackModel(name: "Chương 1", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-01-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 2", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-02-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 3", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-03-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 4", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-04-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 5", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-05-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 6", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-06-phatphapungdung.com.mp3"))
+    bk.tracks.append(TrackModel(name: "Chương 7", link: "https://s1.weblinhtinh.xyz/media/bookspeak/sach-noi-new/truyen-ngan-van-hoc-viet-nam-phat-phap-ung-dung/Chuyen-Co-Tich-Danh-Cho-Nguoi-Lon-07-phatphapungdung.com.mp3"))
+    
+    return bk
 }

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class FavouriteViewController: UIViewController, FavoriteDelegate {
 
     let viewModel = FavouriteVM()
+    let emptyMessages = SwiftMessages()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,6 +42,55 @@ class FavouriteViewController: UIViewController, FavoriteDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if viewModel.list.count == 0 {
+            //emptyMessages.hide()
+            showEmptyMessage()
+        } else {
+            emptyMessages.hideAll()
+        }
+    }
+    
+    func showEmptyMessage(){
+        // Instantiate a message view from the provided card view layout. SwiftMessages searches for nib
+        // files in the main bundle first, so you can easily copy them into your project and make changes.
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.titleLabel?.numberOfLines = 0
+        view.titleLabel?.lineBreakMode = .byWordWrapping
+        view.button?.isHidden = true
+
+        // Theme message elements with the warning style.
+        view.configureTheme(.info)
+
+        // Add a drop shadow.
+        view.configureDropShadow()
+
+        // Set message title, body, and icon. Here, we're overriding the default warning
+        // image with an emoji character.
+       // let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
+        view.configureContent(title: "Ờ, lạ ghê ha!", body: "Cả chồng sách vậy mà bạn chưa lựa được cuốn nào sao?", iconText: "🤔")
+
+        // Increase the external margin around the card. In general, the effect of this setting
+        // depends on how the given layout is constrained to the layout margins.
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
+        // Reduce the corner radius (applicable to layouts featuring rounded corners).
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+
+        // Show the message.
+//        SwiftMessages.show(view: view)
+        
+        // Customize config using the default as a base.
+        var config = SwiftMessages.defaultConfig
+        
+        config.presentationStyle = .center
+        config.duration = .forever
+        //config.duration = .indefinite(delay: 0, minimum: 2)
+        config.presentationContext = .view(self.view)
+        //config.dimMode = .gray(interactive: false)
+        config.ignoreDuplicates = false
+
+        // Show message with default config.
+        emptyMessages.show(config: config, view: view)
     }
     
     //        func changeFavourite(atRow: Int){
